@@ -1,21 +1,26 @@
+import { useState } from 'react'
 import './App.css'
 import Button from './components/atom/button/Button'
 import Typography from './components/atom/typography/Typography'
 import viteLogo from '/vite.svg'
 
 function App() {
-  const handleOnClick = () => alert("Clicked")
+  const [isLoading, setIsLoading] = useState(false)
+  const handleOnClick = () => setIsLoading(true)
+
   return (
     <>
+      <Typography
+        tag='h1'
+        text='Button components'
+        classes='mb-5 font-bold text-[30px]'
+      />
       <Typography
         text='Button component with icon right side'
         classes='mb-5'
       />
       <Button
-        type="button"
-        classes="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded cursor-pointer"
-        disabled
-        autoFocus
+
       >
         Button
         <img src={viteLogo} alt="Vite Logo" className="w-5 h-5" />
@@ -28,8 +33,9 @@ function App() {
         classes='mb-5'
       />
       <Button
+        variant='secondary'
+        variantType='outline'
         type="submit"
-        classes="bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded cursor-pointer"
         disabled
         autoFocus
       >
@@ -43,12 +49,11 @@ function App() {
         classes='mb-5'
       />
       <Button
+        variant='tertiary'
         type="reset"
-        classes="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded cursor-pointer"
-        disabled
-        autoFocus
+        isLoading={isLoading}
       >
-        Reset
+        Make Payment
       </Button>
 
       <hr className='my-5' />
