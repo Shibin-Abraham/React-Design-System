@@ -1,7 +1,7 @@
 import React from "react"
 
 interface TypographyPropsType {
-    tag: keyof JSX.IntrinsicElements;
+    tag?: keyof JSX.IntrinsicElements;
     text: string;
     classes?: string;
     children?: React.ReactNode;

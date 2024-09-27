@@ -1,14 +1,14 @@
 import ButtonProps from "./type"
 
 const Button: React.FC<ButtonProps> = ({
-    text,
     type,
     classes,
+    children,
     ...restProps
 }) => {
     return (
         <button type={type} className={classes} {...restProps}>
-            {text}
+            <span className="flex items-center justify-center gap-3">{children}</span>
         </button>
     )
 }
