@@ -1,15 +1,15 @@
 import React from "react"
 import TypographyPropsType from "./type"
 
-const Typography = ({
+const Typography: React.FC<TypographyPropsType> = ({
     tag = "p",
-    text = "Text not provided",
+    text,
     classes,
     children,
     style,
     role,
     ariaLabel,
-    ariaLabelledBy }: TypographyPropsType) => {
+    ariaLabelledBy }) => {
 
     return React.createElement(
         tag,

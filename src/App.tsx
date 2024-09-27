@@ -1,23 +1,17 @@
 import './App.css'
-import Typography from './components/atom/typography/Typography'
+import Button from './components/atom/typography/button/Button'
 
 function App() {
 
   return (
     <>
-      <Typography
-        tag={"h1"}
-        text={"hello"}
-        classes="title text-center"
-        style={{ fontSize: "50px", color: "red" }}
-        role="heading"
-        ariaLabel="hello"
-        ariaLabelledBy="title"
-      >
-        <span>&nbsp;world</span>
-      </Typography>
-      <Typography tag={"h6"} text={" hello"} />
-      <Typography tag={"p"} text={"hello"} />
+      <Button
+        text="Submit"
+        type="submit"
+        classes="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        disabled
+        autoFocus
+      />
     </>
   )
 }
