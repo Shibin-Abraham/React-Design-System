@@ -10,6 +10,9 @@ export default {
         "primary": "#1E2761",
         "secondary": "#408EC6",
         "tertiary": "#7A2048",
+      },
+      fontFamily: {
+        openSans: ["Open Sans", "sans-serif",]
       }
     },
   },
