@@ -6,7 +6,7 @@ import viteLogo from '/vite.svg'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
-  const handleOnClick = () => setIsLoading(true)
+  const handleOnClick = () => setIsLoading((value) => !value)
 
   return (
     <>
@@ -52,6 +52,8 @@ function App() {
         variant='tertiary'
         type="reset"
         isLoading={isLoading}
+        onClick={handleOnClick}
+        disabled={isLoading}
       >
         Make Payment
       </Button>
@@ -64,7 +66,6 @@ function App() {
       <Button
         type="button"
         classes="bg-yellow-700 hover:bg-yellow-900 text-white font-bold py-2 px-4 rounded cursor-pointer"
-        onClick={handleOnClick}
       >
         <img src={viteLogo} alt="Vite Logo" className="w-5 h-5" />
       </Button>
