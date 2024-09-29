@@ -25,8 +25,8 @@ function App() {
         type='image'
         src="https://cdn.pixabay.com/photo/2024/09/21/02/13/ai-generated-9062778_640.jpg"
         alt="Coding Image"
-        containerClasses="max-h-[400px]"
-        mediaClasses="object-cover rounded object-cover"
+        //containerClasses="max-h-[400px]"
+        mediaClasses="w-full h-full rounded object-cover"
       />
       <Typography
         text='Media component : video'
@@ -38,6 +38,8 @@ function App() {
         alt="Coding Image"
         containerClasses="max-h-[400px]"
         mediaClasses="w-full h-full rounded object-cover"
+        autoPlay
+        muted
       />
     </>
   )

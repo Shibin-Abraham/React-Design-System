@@ -1,24 +1,28 @@
-import MediaProps from "./type"
+import type { MediaProps } from "./type"
 
 const Media: React.FC<MediaProps> = ({
     type = 'image',
     src,
     alt,
     containerClasses,
-    mediaClasses
+    mediaClasses,
+    ...restProps
 }) => {
-    return (
-        <div className={containerClasses}>
-            {
-                type === 'image' ? (
-                    <img src={src} alt={alt} className={mediaClasses} />
-                ) : (
-                    <video src={src} />
-                )
-            }
-
-        </div>
-    )
+    if (type === 'image') {
+        const imageRestProps = restProps as React.ImgHTMLAttributes<HTMLImageElement>
+        return (
+            <div className={containerClasses}>
+                <img src={src} alt={alt} className={mediaClasses} {...imageRestProps} />
+            </div>
+        )
+    } else {
+        const videoRestProps = restProps as React.VideoHTMLAttributes<HTMLVideoElement>
+        return (
+            <div className={containerClasses}>
+                <video src={src} {...videoRestProps} />
+            </div>
+        )
+    }
 }
 
 export default Media
