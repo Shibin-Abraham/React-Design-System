@@ -1,46 +1,37 @@
 import './App.css'
+import Button from './components/atom/button/Button'
 import Media from './components/atom/media/Media'
-// import Button from './components/atom/button/Button'
 import Typography from './components/atom/typography/Typography'
-// import viteLogo from '/vite.svg'
-import video from './assets/video.mp4'
+import Card from './components/molecule/card/Card'
 
 function App() {
 
 
   return (
     <>
-      <Typography
-        tag='h1'
-        text='Design System : Media components'
-        classes='mb-5 font-bold text-[30px]'
-      />
-
-      <hr className='my-5' />
-      <Typography
-        text='Media component : Image'
-        classes='mb-5'
-      />
-      <Media
-        type='image'
-        src="https://cdn.pixabay.com/photo/2024/09/21/02/13/ai-generated-9062778_640.jpg"
-        alt="Coding Image"
-        //containerClasses="max-h-[400px]"
-        mediaClasses="w-full h-full rounded object-cover"
-      />
-      <Typography
-        text='Media component : video'
-        classes='mb-5'
-      />
-      <Media
-        type='video'
-        src={video}
-        alt="Coding Image"
-        containerClasses="max-h-[400px]"
-        mediaClasses="w-full h-full rounded object-cover"
-        autoPlay
-        muted
-      />
+      <Card classes='w-[500px] pb-px' variant='solid'>
+        <Media
+          type='image'
+          src="https://cdn.pixabay.com/photo/2024/09/21/02/13/ai-generated-9062778_640.jpg"
+          alt="Coding Image"
+          //containerClasses="max-w-[300px] max-h-[450px]"
+          mediaClasses="w-full h-full rounded object-cover"
+        />
+        <Typography
+          tag='h4'
+          text='Design System : Card component 1'
+          classes='mb-2 font-bold text-[25px] mt-4 px-2'
+        />
+        <Typography
+          tag='p'
+          text='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+          classes='mb-2 text-[16px] px-2'
+        />
+        <Button variant='secondary' variantType='solid' classes=" w-[110px] h-[40px] text-[14px] mt-4 ml-2 mb-4">
+          Read More
+        </Button>
+      </Card>
     </>
   )
 }

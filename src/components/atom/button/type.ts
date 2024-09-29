@@ -8,6 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     type?: ButtonType;
     classes?: string;
     isLoading?: boolean;
+    children?: React.ReactNode;
 }
 
 export default ButtonProps
